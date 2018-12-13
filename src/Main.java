@@ -1,5 +1,7 @@
 import java.awt.*;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.lang.reflect.Array;
 public class Main {
 
     public static void chapter1() {
@@ -43,9 +45,7 @@ public class Main {
         System.out.println(userNumber);
         double userNumber2 = sc.nextDouble();
         System.out.println(userNumber2);
-    }
 
-    public static void main(String[] args){
         int[] numbers = new int[5];
         numbers[0] = 31;
         numbers[1] = 45;
@@ -54,12 +54,29 @@ public class Main {
         numbers[4] = 10;
 
         int[] numbers2 = {31, 45, 22, 98, 10};
+        Arrays.sort(numbers);
+        System.out.println(Arrays.toString(numbers));
 
         String[] myfaveCandybars = {"Twix", "Hershey's", "Crunch"};
         System.out.println("Index 1: " + myfaveCandybars[1]);
         myfaveCandybars[2] = "Butterfinger";
         System.out.println("Index 2: "+ myfaveCandybars[2]);
         System.out.println("Length: " + myfaveCandybars.length);
+        System.out.println(Array.get(myfaveCandybars, 2));
+
+        Car blueSuby = new Car(25.5, "H1C34E5", Color.blue, false);
+        Car redFord = new Car(13.9, "3DN243G", Color.red, true);
+
+        double myCarSpeed = 50;
+        myCarSpeed = blueSuby.speedingUp(myCarSpeed);
+        System.out.println(myCarSpeed);
+
+        String s = "dog";
+        String replaceF = s.replace('d','f');
+        System.out.println(replaceF);
+    }
+
+    public static void main(String[] args){
 
     }
 }
